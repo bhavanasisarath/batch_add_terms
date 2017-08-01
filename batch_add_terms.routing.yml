@@ -1,0 +1,7 @@
+batch_add_terms.mass_add:
+  path: '/admin/structure/taxonomy/{taxonomy_vocabulary}/mass-add'
+  defaults:
+    _controller: '\Drupal\batch_add_terms\Controller\BatchTermController::batchAddTerms'
+    _title: 'Batch add terms'
+  requirements:
+    _permission: 'administer taxonomy'

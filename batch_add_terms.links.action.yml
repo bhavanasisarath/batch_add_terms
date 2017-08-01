@@ -1,0 +1,7 @@
+batch_add_terms.mass_add:
+  route_name: batch_add_terms.mass_add
+  title: 'Batch Add Terms'
+  weight: 2
+  appears_on:
+    - entity.taxonomy_vocabulary.overview_form
+

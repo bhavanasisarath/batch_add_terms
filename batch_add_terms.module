@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Batch Add terms to Taxonomy vocabulary.
+ *
+ * Allows to add multiple taxonomy terms to vocabulary.
+ */
+
+/**
+ * Implements hook_entity_operation().
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @return array
+ *   List of operations.
+ */
+function batch_add_terms_entity_operation(\Drupal\Core\Entity\EntityInterface $entity) {
+  $operations = array();
+  if ($entity instanceof Drupal\taxonomy\Entity\Vocabulary) {
+    $operations['batch_add_terms'] = array(
+      'title' => t('Batch Add Terms'),
+      'url' => \Drupal\Core\Url::fromRoute('batch_add_terms.mass_add', ['taxonomy_vocabulary' => $entity->id()]),
+      'weight' => 60,
+    );
+  }
+
+  return $operations;
+}

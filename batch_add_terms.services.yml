@@ -1,0 +1,5 @@
+services:
+  batch_add_terms.route_subscriber:
+    class: Drupal\batch_add_terms\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
